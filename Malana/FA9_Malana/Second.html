@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+	<html>
+		<header>
+			<button onclick="returnimage()">Replace image</button>
+			<button onclick="replaceimage()">Return image</button>
+		</header>
+		<article>
+			<img id="Cat(1)" src="Cat(1).jpg" width="700px" height="700px">
+		</article>
+		<script>
+			function replaceimage(){
+			document.getElementById("Cat(1)").src = "Cat(1).jpg";
+			}
+			function returnimage(){
+			document.getElementById("Cat(1)").src = "Cat(2).png";
+			}
+		</script>
+	</html>
