@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Online Shop</title>
+    <!-- type in the necessary meta tags -->
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1> Welcome to Prince's Store </h1>
+	<h2> Please select from the following items </h2>
+	<!--- provide your own 3 items and their prices in the list --->
+	<ol>
+		<li> Pants price: 100.00 </li>
+		<li> Polo price: 250.00 </li>
+		<li> Jacket price: 300.00 </li>
+	</ol>
+	<!-- the following will be used to display purchase information -->
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill <span id="tbill"> </span> </p>
+	<button onclick="order()"> Buy an item </button>
+	<button onclick="clearBill()"> Clear </button>
+    
+    <script>
+    	/* do not forget to include comments in your answer */
+        
+		function clearBill(){
+		    item = "";
+            bill = 0;
+            qty = 0;
+            tbill = 0;
+            document.getElementById("item").innerHTML = "";
+            document.getElementById("qty").innerHTML = "";
+            document.getElementById("bill").innerHTML = "";
+            document.getElementById("tbill").innerHTML = "";
+            }
+	    /* Function to order clothing */
+		function order(){
+		    var item = prompt("Input clothing of choice in terms of the numbers corresponding to the items")
+			var qty = prompt("How many of those are you buying?");
+			var price;
+			/* Determine order and price */
+			switch(item){
+			    case "1":
+				    document.getElementById("item").innerHTML = "Pants";
+					price = 100;
+					break;
+		        case "2":
+				    document.getElementById("item").innerHTML = "Polo";
+					price = 250;
+					break;
+			    case "3":
+				    document.getElementById("item").innerHTML = "Jacket";
+					price = 300;
+					break;
+			    default:
+				    document.getElementById("item").innerHTML = "Unavailable";
+					price = 0;
+					break;
+				    }
+			/* Compute bill */
+	        document.getElementById("qty").innerHTML = qty;
+			var total = price*qty;
+			document.getElementById("bill").innerHTML = total;
+			var bill = 0;
+			if (bill <= 0) {
+			    bill += total;
+				document.getElementById("tbill").innerHTML = bill;
+			}
+			
+		}
+		
+    </script>
+</body>
+
+</html>
+

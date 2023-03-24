@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>one time password </title>
+		<style>
+            body {background: lightblue;
+            text-align: center;
+            font-family: arial;
+			color: navy;
+			}
+			button {padding: 10px; background:violet }
+			a {font-size: 0.5em; color: maroon}
+		</style>
+		
+	</head>
+<body onload="load()">
+    <h1> Final Verification Step </h1>
+	<h2> Current OTP: <span id="OTP"> _ _ _ _ _ _ <span> </h2>
+	<h2><a href="" onclick="load()" New OTP </a></h2>
+	<button onclick="check()"> Enter the OTP as shown above </button>
+	
+	<script>
+	
+	    var OTP = Math.floor(Math.random()*899999 + 100000);
+		
+		function load(){
+		    document.getElementById("OTP").innerHTML = OTP;
+			}
+		
+		function check(){
+		    var x = prompt("Input your one time password: ");
+			if (x ==OTP){
+                window.open("https://www.facebook.com/photo/?fbid=10224848662938539&set=a.2691810969160");
+			    }
+		    else {
+			    alert("Mali ang otp mo tih");
+				}
+			generate();
+			}
+		
+		
+		
+		
+    </script>
+</body>
+</html>
+		
+		
+		
